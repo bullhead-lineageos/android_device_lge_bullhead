@@ -329,6 +329,10 @@ PRODUCT_PACKAGES += \
     keystore.msm8992 \
     gatekeeper.msm8992
 
+# Reduce cost of scrypt for FBE CE decryption
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.crypto.scrypt_params=13:3:1
+
 # For android_filesystem_config.h
 PRODUCT_PACKAGES += \
    fs_config_files
