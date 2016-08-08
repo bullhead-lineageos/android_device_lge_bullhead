@@ -73,7 +73,7 @@ on init
     write /proc/sys/vm/swappiness 100
 
 on fs
-    mount_all ./fstab.bullhead
+    mount_all ./fstab.bullhead --early
     swapon_all ./fstab.bullhead
 
     restorecon_recursive /persist
@@ -189,6 +189,15 @@ on boot
 
     # Wifi firmware reload path
     chown wifi wifi /sys/module/wlan/parameters/fwpath
+
+on late-fs
+    # Start bootanim and its dependencies
+    start servicemanager
+    start surfaceflinger
+    start audioserver
+    start bootanim
+    # Mount RW partitions which need run fsck
+    mount_all fstab.bullhead --late
 
 on post-fs
     symlink /dev/block/platform/soc.0/f9824900.sdhci /dev/block/bootdevice
