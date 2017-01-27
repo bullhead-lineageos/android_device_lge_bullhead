@@ -215,13 +215,15 @@ on post-fs
     mkdir /persist/data/app_g 0700 system system
     mkdir /persist/widevine 0770 drm system
 
-    start qseecomd
     # Busy loop to wait for qseecomd started
     exec - root root system -- /system/bin/init.bullhead.qseecomd.sh
     # Start devices by sysfs trigger
     start devstart_sh
 
 on post-fs-data
+    start zygote
+    start netd
+
     # boot time fs tune
     write /sys/block/mmcblk0/queue/iostats 0
     write /sys/block/mmcblk0/queue/scheduler cfq
