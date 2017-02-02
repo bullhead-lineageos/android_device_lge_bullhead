@@ -30,7 +30,6 @@ PRODUCT_COPY_FILES += \
     device/lge/bullhead/init.recovery.bullhead.rc:root/init.recovery.bullhead.rc \
     device/lge/bullhead/init.bullhead.ramdump.rc:root/init.bullhead.ramdump.rc \
     device/lge/bullhead/init.bullhead.fp.rc:root/init.bullhead.fp.rc \
-    device/lge/bullhead/init.qcom.devwait.sh:system/bin/init.qcom.devwait.sh \
     device/lge/bullhead/init.qcom.devstart.sh:system/bin/init.qcom.devstart.sh
 
 ifeq ($(TARGET_USES_CHINOOK_SENSORHUB),true)
@@ -147,10 +146,6 @@ PRODUCT_COPY_FILES += \
 # MBN
 PRODUCT_COPY_FILES += \
     device/lge/bullhead/init.bullhead.sh:system/bin/init.bullhead.sh
-
-# Qseecomd configuration file
-PRODUCT_COPY_FILES += \
-    device/lge/bullhead/init.bullhead.qseecomd.sh:system/bin/init.bullhead.qseecomd.sh
 
 PRODUCT_TAGS += dalvik.gc.type-precise
 
