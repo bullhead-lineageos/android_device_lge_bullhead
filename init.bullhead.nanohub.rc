@@ -13,3 +13,8 @@ on post-fs-data
 service flash-nanohub-fw /vendor/bin/nanoapp_cmd download
     oneshot
     disabled
+
+on post-fs-data
+    mkdir /data/system/nanohub_lock/
+    restorecon /data/system/nanohub_lock
+
