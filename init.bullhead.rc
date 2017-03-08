@@ -223,8 +223,7 @@ on post-fs
 on post-fs-data
     start netd
     # zygote need to be started after otapreopt which will be done on post-fs-data
-    # start zygote on the next action after post-fs-data which is load_persist_props_action
-    on load_persist_props_action
+on zygote-start
     start zygote
     # boot time fs tune
     write /sys/block/mmcblk0/queue/iostats 0
