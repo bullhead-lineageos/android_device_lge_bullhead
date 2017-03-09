@@ -63,6 +63,11 @@ on property:sys.boot_completed=1
 on init
     symlink /sdcard /storage/sdcard0
 
+    # We have vendor/ as early mount so we can start qseecomd earlier
+    # early mount partions e.g. vendor/ will be mounted in init first stage
+    # see b/27805372
+    start qseecomd
+
     # NXP HAL expects /dev/pn54x
     symlink /dev/pn548 /dev/pn54x
 
@@ -221,10 +226,12 @@ on post-fs
     start devstart_sh
 
 on post-fs-data
+    # We can start netd here before in is launched in common init.rc on zygote-start
     start netd
     # zygote need to be started after otapreopt which will be done on post-fs-data
 on zygote-start
-    start zygote
+    # zygote is started in common init.rc
+    # and now we can continue initialize /data/
     # boot time fs tune
     write /sys/block/mmcblk0/queue/iostats 0
     write /sys/block/mmcblk0/queue/scheduler cfq
