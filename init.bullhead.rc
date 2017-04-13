@@ -197,7 +197,6 @@ on boot
 
 on late-fs
     # Start bootanim and its dependencies
-    start servicemanager
     start surfaceflinger
     start audioserver
     start bootanim
