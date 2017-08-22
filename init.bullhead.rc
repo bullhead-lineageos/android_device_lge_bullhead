@@ -63,6 +63,9 @@ on property:sys.boot_completed=1
 on init
     symlink /sdcard /storage/sdcard0
 
+    wait /dev/block/platform/soc.0/f9824900.sdhci
+    symlink /dev/block/platform/soc.0/f9824900.sdhci /dev/block/bootdevice
+
     # We have vendor/ as early mount so we can start qseecomd earlier
     # early mount partions e.g. vendor/ will be mounted in init first stage
     # see b/27805372
@@ -211,8 +214,6 @@ on late-fs
     mount_all fstab.bullhead --late
 
 on post-fs
-    symlink /dev/block/platform/soc.0/f9824900.sdhci /dev/block/bootdevice
-
     mkdir /persist/data 0700 system system
     mkdir /persist/data/sfs 0700 system system
     mkdir /persist/data/tz 0700 system system
