@@ -176,10 +176,8 @@ PRODUCT_PACKAGES += \
     android.hardware.memtrack@1.0-impl
 
 # Light HAL
-PRODUCT_PACKAGES += \
-    lights.bullhead \
-    lights.vts \
-    android.hardware.light@2.0-impl
+ PRODUCT_PACKAGES += \
+     android.hardware.light@2.0-service.bullhead
 
 # RenderScript HAL
 PRODUCT_PACKAGES += \
