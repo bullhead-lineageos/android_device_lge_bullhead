@@ -46,7 +46,7 @@ PRODUCT_COPY_FILES += \
     frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:system/etc/media_codecs_google_video.xml \
     device/lge/bullhead/media_codecs.xml:system/etc/media_codecs.xml \
     device/lge/bullhead/media_codecs_performance.xml:system/etc/media_codecs_performance.xml \
-    device/lge/bullhead/media_profiles.xml:system/etc/media_profiles.xml
+    device/lge/bullhead/media_profiles_V1_0.xml:system/etc/media_profiles_V1_0.xml
 
 # APEX
 PRODUCT_COPY_FILES += \
@@ -358,10 +358,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.audio.fluence.speaker=true \
     persist.speaker.prot.enable=true \
     ro.config.vc_call_vol_steps=7
-
-# Default OMX service to non-Treble
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.media.treble_omx=false
 
 # Write Manufacturer & Model information in created media files.
 PRODUCT_PROPERTY_OVERRIDES += \
