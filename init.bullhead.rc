@@ -389,6 +389,7 @@ service msm_irqbalance /system/bin/msm_irqbalance -f /vendor/etc/msm_irqbalance.
 service charger /charger
     class charger
     critical
+    capabilities SYS_BOOT
     seclabel u:r:charger:s0
 
 service qcamerasvr /vendor/bin/mm-qcamera-daemon
