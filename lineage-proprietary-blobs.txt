@@ -21,7 +21,6 @@
 -app/HiddenMenu/HiddenMenu.apk
 -app/RCSBootstraputil/RCSBootstraputil.apk
 -app/RcsImsBootstraputil/RcsImsBootstraputil.apk
--app/TimeService/TimeService.apk
 -priv-app/atfwd/atfwd.apk
 -priv-app/CNEService/CNEService.apk
 -priv-app/ConnMO/ConnMO.apk
@@ -59,7 +58,6 @@ bin/radish
 bin/rmt_storage
 bin/subsystem_ramdump
 bin/thermal-engine
-bin/time_daemon
 etc/acdbdata/MTP/MTP_Bluetooth_cal.acdb
 etc/acdbdata/MTP/MTP_General_cal.acdb
 etc/acdbdata/MTP/MTP_Global_cal.acdb
