@@ -184,3 +184,7 @@
 /persist/wlan_mac\.bin             u:object_r:persist_wifi_file:s0
 /persist/sensorcal\.json           u:object_r:persist_sensortool_file:s0
 /persist/calibration(/.*)?         u:object_r:persist_camera_file:s0
+
+# TimeKeep
+/sys/devices/soc\.0/qpnp-rtc-8/rtc/rtc0(/.*)?                           u:object_r:sysfs_rtc:s0
+/(system/vendor|vendor)/bin/timekeep                                    u:object_r:timekeep_exec:s0
