@@ -498,6 +498,10 @@ PRODUCT_PACKAGES += \
     libbt-vendor \
     android.hardware.bluetooth@1.0-impl
 
+# Shims
+PRODUCT_PACKAGES += \
+   libaudioclient_shim
+
 # limit dex2oat threads to improve thermals
 PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.boot-dex2oat-threads=4 \
