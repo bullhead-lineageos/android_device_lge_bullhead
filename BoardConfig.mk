@@ -171,6 +171,7 @@ TARGET_FS_CONFIG_GEN += device/lge/bullhead/config.fs
 BOARD_PERFSETUP_SCRIPT := platform_testing/scripts/perf-setup/bullhead-setup.sh
 
 DEVICE_MANIFEST_FILE := device/lge/bullhead/manifest.xml
+PRODUCT_ENFORCE_VINTF_MANIFEST_OVERRIDE := true
 DEVICE_MATRIX_FILE := device/lge/bullhead/compatibility_matrix.xml
 
 ifeq ($(TARGET_PRODUCT),aosp_bullhead_svelte)
