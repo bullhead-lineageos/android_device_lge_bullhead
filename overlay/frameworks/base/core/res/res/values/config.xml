@@ -352,4 +352,7 @@
 
     <!-- Disable rounded corners on windows to improve graphics performance -->
     <bool name="config_supportsRoundedCornersOnWindows">false</bool>
+
+    <!-- The amount to scale fullscreen snapshots for Overview and snapshot starting windows. -->
+    <item name="config_highResTaskSnapshotScale" format="float" type="dimen">0.8</item>
 </resources>
