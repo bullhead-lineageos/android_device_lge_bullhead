@@ -246,7 +246,8 @@ PRODUCT_PACKAGES += \
 
 # Keymaster HAL
 PRODUCT_PACKAGES += \
-    android.hardware.keymaster@3.0-impl
+    android.hardware.keymaster@3.0-impl \
+    android.hardware.keymaster@3.0-service
 
 # Vibrator HAL
 PRODUCT_PACKAGES += \
@@ -298,8 +299,9 @@ PRODUCT_PACKAGES += \
     android.hardware.contexthub@1.0-service
 
 # new gatekeeper HAL
-PRODUCT_PACKAGES +=                         \
-    android.hardware.gatekeeper@1.0-impl    \
+PRODUCT_PACKAGES += \
+    android.hardware.gatekeeper@1.0-impl \
+    android.hardware.gatekeeper@1.0-service
 
 ifeq ($(TARGET_USES_CHINOOK_SENSORHUB),true)
 PRODUCT_PACKAGES += \
