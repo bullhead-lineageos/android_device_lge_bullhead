@@ -173,7 +173,8 @@ PRODUCT_PACKAGES += \
     hwcomposer.msm8992 \
     libgenlock \
     memtrack.msm8992 \
-    android.hardware.memtrack@1.0-impl
+    android.hardware.memtrack@1.0-impl \
+    android.hardware.memtrack@1.0-service
 
 # Light HAL
  PRODUCT_PACKAGES += \
