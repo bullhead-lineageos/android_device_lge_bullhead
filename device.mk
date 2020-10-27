@@ -587,5 +587,12 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.facelock.rec_timeout=3500 \
     ro.facelock.est_max_time=600
 
+# Enable camera EIS
+# eis.enable: enables electronic image stabilization
+# is_type: sets image stabilization type
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.camera.eis.enable=1 \
+    persist.camera.is_type=4
+
 $(call inherit-product-if-exists, hardware/qcom/msm8994/msm8992.mk)
 $(call inherit-product-if-exists, vendor/qcom/gpu/msm8994/msm8994-gpu-vendor.mk)
