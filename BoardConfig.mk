@@ -183,6 +183,9 @@ DEVICE_MANIFEST_FILE := device/lge/bullhead/manifest.xml
 PRODUCT_ENFORCE_VINTF_MANIFEST_OVERRIDE := true
 DEVICE_MATRIX_FILE := device/lge/bullhead/compatibility_matrix.xml
 
+# SVELTE
+MALLOC_SVELTE := true
+
 # Legacy blob support
 TARGET_PROCESS_SDK_VERSION_OVERRIDE += \
     /vendor/bin/mm-qcamera-daemon=27
