@@ -311,15 +311,15 @@ PRODUCT_PACKAGES += \
     nanoapp_cmd
 endif
 
-# sensor utilities (only for userdebug and eng builds)
-ifneq (,$(filter userdebug eng, $(TARGET_BUILD_VARIANT)))
+# sensor utilities (only for eng builds)
+ifneq (,$(filter eng, $(TARGET_BUILD_VARIANT)))
 PRODUCT_PACKAGES += \
     nanotool \
     sensortest
 endif
 
-# Library used for VTS profiling (only for userdebug and eng builds)
-ifneq (,$(filter userdebug eng, $(TARGET_BUILD_VARIANT)))
+# Library used for VTS profiling (only for eng builds)
+ifneq (,$(filter eng, $(TARGET_BUILD_VARIANT)))
 PRODUCT_PACKAGES += \
     libvts_profiling \
     libvts_multidevice_proto
@@ -565,7 +565,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.vendor.build.security_patch=2018-10-05
 
 # Modem debugger/misc
-ifneq (,$(filter userdebug eng, $(TARGET_BUILD_VARIANT)))
+ifneq (,$(filter eng, $(TARGET_BUILD_VARIANT)))
 ifeq (,$(filter aosp_bullhead, $(TARGET_PRODUCT)))
 PRODUCT_PACKAGES += \
     NexusLogger
