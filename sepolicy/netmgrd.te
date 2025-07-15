@@ -42,9 +42,6 @@ dontaudit netmgrd self:capability sys_module;
 # Set net_radio properties
 set_prop(netmgrd, net_radio_prop)
 
-# Permission to run netd commands
-allow netmgrd netd_socket:sock_file write;
-
 #Allow access to files associated with netd
 allow netmgrd net_data_file:file r_file_perms;
 allow netmgrd net_data_file:dir r_dir_perms;
