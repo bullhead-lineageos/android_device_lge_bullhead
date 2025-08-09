@@ -13,6 +13,9 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
 $(call inherit-product, device/lge/bullhead/device.mk)
 $(call inherit-product-if-exists, vendor/lge/bullhead/bullhead-vendor.mk)
 
+# Inherit go configuration
+$(call inherit-product, build/target/product/go_defaults.mk)
+
 ## Device identifier. This must come after all inclusions
 PRODUCT_NAME := lineage_bullhead
 PRODUCT_DEVICE := bullhead
