@@ -253,7 +253,7 @@ on zygote-start
     mkdir /data/vendor/wifi/wpa/sockets 0770 wifi wifi
 
     # Create the directories used by CnE subsystem
-    mkdir /data/connectivity 0771 system system
+    mkdir /data/connectivity 0771 system system encryption=Require
 
     # NFC: create data/nfc for nv storage
     mkdir /data/vendor/nfc 0770 nfc nfc
@@ -289,7 +289,7 @@ on zygote-start
     rm /data/misc/perfd/default_values
 
     # Subsytem Ramdump collection
-    mkdir /data/ramdump 0700 root root
+    mkdir /data/ramdump 0700 root root encryption=Require
 
     setprop vold.post_fs_data_done 1
 
