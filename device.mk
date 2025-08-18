@@ -539,6 +539,12 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.gnss@1.0-impl
 
+# Healthd
+PRODUCT_PACKAGES += \
+    android.hardware.health@2.1-impl \
+    android.hardware.health@2.1-impl.recovery \
+    android.hardware.health@2.1-service
+
 # Trust
 PRODUCT_PACKAGES += \
     vendor.lineage.trust@1.0-service
