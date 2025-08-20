@@ -178,6 +178,9 @@ DEVICE_MATRIX_FILE := device/lge/bullhead/compatibility_matrix.xml
 # SVELTE
 MALLOC_SVELTE := true
 
+# Wait for qseecom
+TARGET_KEYMASTER_WAIT_FOR_QSEE := true
+
 # Legacy blob support
 TARGET_PROCESS_SDK_VERSION_OVERRIDE += \
     /vendor/bin/mm-qcamera-daemon=27
