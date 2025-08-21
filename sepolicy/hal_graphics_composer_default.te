@@ -1,0 +1,9 @@
+# HWC_UeventThread
+allow hal_graphics_composer_default self:netlink_kobject_uevent_socket { read bind create setopt };
+
+# Access /sys/devices/virtual/graphics/fb0/mdp/caps and maybe others
+r_dir_file(hal_graphics_composer_default, sysfs_graphics)
+
+# Rules for vndbinder
+allow hal_graphics_composer_default qdisplay_service:service_manager { add find };
+vndbinder_use(hal_graphics_composer_default);

@@ -1,3 +1,43 @@
 allow init tmpfs:lnk_file create_file_perms;
 # allow: write /sys/bus/msm_subsys/devices/subsys0/restart_level "related"
 allow init sysfs_ssr:lnk_file read;
+
+allow init self:netlink_kobject_uevent_socket read;
+
+allow init sysfs_batteryinfo:file { open read };
+allow init sysfs_power_management:file write;
+allow init sysfs_mmc:file { open write };
+
+userdebug_or_eng(`
+        allow init diag_device:chr_file unlink;
+')
+
+allow init proc:file write;
+
+allow init  {
+    sysfs_mmc
+    sysfs_g_android_param
+    sysfs_lge_handle_panic_param
+    sysfs_touch
+    sysfs_ssr_toggle
+    sysfs_msm_subsys_restart
+    sysfs_poweroff
+    sysfs_rndis_ipa_param
+}:file w_file_perms;
+
+allow init {
+    firmware_file
+    persist_file
+}:dir mounton;
+
+# Allow init to bind mount loader config for media swcodec
+allow init system_file:file mounton;
+
+# init chmod/chown access to /sys files
+allow init {
+    sysfs
+    sysfs_devices_fingerprint
+    sysfs_display
+    sysfs_usb
+    sysfs_wlan_fwpath
+}:file setattr;

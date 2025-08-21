@@ -41,3 +41,5 @@ allow camera sensorservice_service:service_manager find;
 allow camera persist_file:dir search;
 allow camera persist_camera_file:dir search;
 allow camera persist_camera_file:file r_file_perms;
+
+allow camera hal_camera_default:fd use;
