@@ -631,5 +631,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PACKAGES += \
     disable_configstore
 
+# Vendor service manager
+PRODUCT_PACKAGES += \
+    vndservicemanager
+
 $(call inherit-product-if-exists, hardware/qcom/msm8994/msm8992.mk)
 $(call inherit-product-if-exists, vendor/qcom/gpu/msm8994/msm8994-gpu-vendor.mk)
