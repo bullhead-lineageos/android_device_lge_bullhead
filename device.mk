@@ -599,9 +599,8 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.sys.disable_rescue=true
 
-# ro.product.first_api_level indicates the first api level the device has commercially launched on.
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.product.first_api_level=23
+# Shippig API
+$(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_m.mk)
 
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     ro.surface_flinger.force_hwc_copy_for_virtual_displays=true \
